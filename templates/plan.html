@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetFit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">GetFitAI</h1>
+         <a href="/home">Home</a> <a href="#">Workout Planner</a> <a href="/macronutrient_calculator">Macronutrient Calculator</a>
+    </div>
+
+    <div class="fitnessinputs">
+    <form action="#" method="post">
+
+        <div class = "inputs">
+        <label for="weight">How much do you weigh?</label>
+            <!--min weight of 90lbs and 40kg and max of 300lbs and 135kg-->
+        <label for="">kg</label> 
+        <input type="radio" id="kg" name="weight_unit" value="kg"> 
+        <label for="">lbs</label>    
+        <input type="radio" id="lbs" name="weight_unit" value="lbs" checked="checked"> 
+        <input type="number" min="45" max="150" id="kg_number" class="numeral_input"  name = "weight_kg"  style="display: none;">
+        <input type="number" min="90" max="300" id="lb_number" class="numeral_input" name = "weight_lb"   style="display: flex;">
+        </div>
+
+        <div class="inputs">
+            <label for="age">How old are you?</label>
+            <input type="number" min="15" max="100" step="1" id="age" name="age_name">
+        </div>
+
+        <div class = "inputs">
+        <label for="height">How tall are you?</label>
+        <label for="">meters</label>
+        <input type="radio" id="meters" name="height_unit" value="meters">
+        <label for="">feet</label>
+        <input type="radio" id="feet" name="height_unit" value="feet" checked="checked">
+        <!--min height of 4feet and 1.20m and max of 8feet and 2.40m-->
+        <div id="feet_input">
+            <label for="">feet</label>
+            <input type="number" class="numeral_input" name = "height_feet" id="feets" max="7" min="4" step="1">
+            <label for="">inches</label>
+            <input type="number" class="numeral_input" name = "height_inches" id="inches" max="11" min="0" step="1">
+        </div>
+
+        <div id="meters_input" style="display: none;">
+            <label for="">meters</label>
+            <input type="number" class="numeral_input" name = "height" id="meter_number" min="1.00" max="2.50" step="0.01">
+        </div>
+
+        </div>
+
+        <div class="inputs">
+        <label for="activity_level">How would you describe your current activity level?</label>
+        <select id="activity_level_choice" name="act_level">
+            <option value="" disabled selected hidden> Your activity level</option>
+            <option value="extremely active">Extremely Active</option>
+            <option value="vigourously active">Vigourously Active</option>
+            <option value="moderately active">Moderately Active</option>
+            <option value="sedentary lifestyle">Sedentary Lifestyle</option>
+            <option value="extremely inactive">Extremely Inactive</option>
+        </select> 
+        </div>
+
+        <div class = "inputs">
+        <label for="activity_type">What is your ideal type of activity?</label>
+        <select id = "activity_type_choice" name="activity_type">
+            <option value="" disabled selected hidden> Your choice of activity</option>
+            <option value="weightlifting">Weightlifing</option>
+            <option value="cardio">Cardio</option>
+            <option value="crossfit">Crossfit</option>
+            <option value="calisthenics">Calisthenics</option>
+            <option value="general fitness workouts">General Fitness</option>
+        </select> 
+        </div>
+
+        <div class = "inputs">
+        <label for="fitgoal">What is your fitness goal?</label>
+        <select id="goal_choice" name="fit_goal">
+            <option value="" disabled selected hidden> Your fitness goal</option>
+            <option value="lose fat">Lose Fat</option>
+            <option value="gain muscle">Gain Muscle</option>
+            <option value="improve hypertrophy">Hypertrophy/ Toning</option>
+            <option value="improve their general health">General Health</option>
+            <option value="gain strength">Gain Strength</option>
+        </select>
+        </div>
+        <div class = "inputs">
+            <label for="number_days"> How many days do you wish to exercise per week?</label>
+            <input type="number"  id="num_days" max="7" min="1" step="1" name="num_of_days">
+        </div>
+
+        <input type="submit" onsubmit="false" value="Get Your Program" class="submit_button" onclick="store_plan_inputs()">
+    </form>
+    </div>
+
+</body>
+<script src = "{{ url_for('static', filename = 'new.js') }}"></script>
+</html>

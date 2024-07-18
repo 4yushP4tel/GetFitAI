@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetFit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'new.css')}}">
+</head>
+<body>
+    <!--Header Div-->
+    <div class="header">
+        <h1 class="logo">GetFitAI</h1>
+         <a href="/home">Home</a> <a href="/workout_plan_generator">Workout Planner</a> <a href="/macronutrient_calculator">Macronutrient Calculator</a>
+    </div>
+
+
+    <!-- new html code (in the future it will be the table containing all the macro info)-->
+    <div class="macro_prompt_response">
+        <h1 class="table_header">An Outline For a Diet Specialized For You</h1>
+     {{ macro_response | safe }}
+    </div>
+    <hr class = "line">
+
+    <div class="bottom_page">
+                <p>Now that your diet is on point, you can find a workout plan designed for you!</p>
+                <a href="/workout_plan_generator"><button >Get Your Workout Plan Today</button></a>    
+    </div>
+</body>
+<script src="{{url_for('static', filename = 'new.js')}}"></script>
+</html>

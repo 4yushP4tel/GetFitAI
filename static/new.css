@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header{
+    padding: 0 2rem;
+    background-color: whitesmoke;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    color: black;
+    font-size: 20px;
+    border-left: 100px;
+    border-right: 100px;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5)
+}
+
+.header a{
+    text-decoration: none;
+    color: black;
+    border-top: 0px;
+    text-size-adjust: 20px;
+
+}
+
+.header a:hover{
+    text-decoration: underline;
+    color: white;
+
+}
+
+.main_page{
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-between;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    min-height: 100vh;
+    padding-left: 30px ;
+    font-style: italic;
+}
+
+button{
+    top: 30px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-style: italic;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-bottom: 20px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.workout{
+    height: auto;
+    width: auto;
+    max-width: 200px ;
+    max-height: 200px;
+}
+
+.food{
+    height: auto;
+    width: auto;
+    max-width: 200px ;
+    max-height: 200px;
+}
+
+.fitnessinputs{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-evenly;
+    max-width: fit-content;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.inputs{
+    margin-top: 20px;
+    font-size: 20px;
+    font-style: italic;
+
+}
+
+.submit_button{
+
+    border-radius: 12px;
+    font-size: 20px;
+    font-style: italic;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+}
+
+.submit_button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+option{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.numeral_input{
+    margin-right: 2px;
+}
+.feet_input{
+    padding-top: 4px;
+}
+
+.table_header{
+    font-size: 30px;
+    margin-left: 160px;
+}
+
+.plan_prompt_response{
+    font-size: 20px;
+    margin: 0 auto;
+    width: auto;
+    height: 50%;
+    padding-top: 7%;
+    min-height: 80vh;
+    padding-bottom: 10px;
+}
+.macro_prompt_response{
+    font-size: 20px;
+    margin: 0 auto;
+    width: auto;
+    height: 50%;
+    padding-top: 7%;
+    min-height: 50vh;
+    padding-bottom: 10px;
+}
+
+table{
+    width: 80%;
+    margin: 0 auto;
+}
+
+th{
+    text-align: left;
+}
+
+table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.bottom_page{
+    font-size: 25px;
+    margin: 0 auto;
+    width: auto;
+    min-height: 20vh;
+    padding-bottom: 10px;
+    margin-left: 160px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetFitAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
+    <body>
+<!--Header Div-->
+        <div class="header">
+            <h1 class="logo">GetFitAI</h1>
+             <a href="#">Home</a> <a href="/workout_plan_generator">Workout Planner</a> <a href="/macronutrient_calculator">Macronutrient Calculator</a>
+        </div>
+<!--BodyDiv-->
+        <div class="main_page">
+            <div>
+                <h2>Customized Workout Plans for Every Body!</h2>
+                <p class="slogan">Get Fit with AI generated workout plans and diet assistance curated specifically for your needs</p>
+                <hr class = "line">
+                <p>With the workout planner, you can find a program designed for you based on your fintess goals and current fitness level.</p>
+                <a href="/workout_plan_generator"> <button >Get Your Workout Plan Today</button> </a>    
+
+                <hr class = "line">
+                <p>The macronutrient caluclator helps you design your diet to help you reach your dream body and performance.</p>
+                <a href="/macronutrient_calculator"><button >Get Started With Your Diet</button></a>    
+
+            </div>
+
+        </div>
+    </body>
+    <script src = "{{ url_for('static', filename = 'new.js') }}"></script>
+    </html>
