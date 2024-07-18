@@ -71,7 +71,7 @@ def plan():
                 feet = request.form["height_feet"]
                 if not inches or not feet:
                     return redirect(url_for("plan"))
-                #can't change from string to float, but can change form int to float
+                #change from str to int to do math
                 inches = int(inches)
                 feet = int(feet)
                 ht_in_in = inches + feet*12
@@ -166,7 +166,7 @@ def nutrition():
                 if not weight_change_lbs:
                     print("weight change lbs not submitted")
                     return redirect(url_for("nutrition"))
-                # page kept refreshing here due to not taking into account that the weight change in a float and not an integer
+                # page kept refreshing here due to not taking into account that the weight change is a float and not an integer
                 weight_change_lbs = float(weight_change_lbs)
                 weight_change_kg = weight_change_lbs* 0.453592
                 weight_change_kg = str(weight_change_kg)
@@ -213,8 +213,8 @@ def your_plan():
                 Do not include the title html and ''' in the response
                 At the bottom of the table include a small paragraph with a short sentence that should motivate someone to continue this workout plan
                 this short paragraph should have a left margin of 160px and a font size of 25px
-                """ # here I would add whatever html code that I want(in the future it will be whatever info I get from the API)
-    #print(new_html)
+                """ 
+                # This specific prompt gives me exactly what I want, that is why it is long
     
     plan_response = get_response(plan_prompt)
     print(plan_response)
@@ -247,11 +247,5 @@ def your_macros():
 if __name__ == "__main__":
     app.run(debug=True)
 
-#my_api_key = ""
-#openai.api_key = os.getenv(my_api_key)
-
-#print("Open ai is downloaded")
-#def get_results(prompt):
-#    pass
 
 
