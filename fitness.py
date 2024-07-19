@@ -23,6 +23,8 @@ client = OpenAI(api_key= get_fit_key)
 
 app = Flask(__name__, static_url_path='/static')
 
+# function takes a prompt and returns first element of choices
+# temperature controls how creative LLM is, lower is less creative more consistent
 def get_response(prompt):
         completion = client.chat.completions.create(
             model= "gpt-4o",
