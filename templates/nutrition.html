@@ -17,38 +17,39 @@
                 <div class = "inputs">
                 <label for="weight">How much do you weigh?</label>
                     <!--min weight of 90lbs and 40kg and max of 300lbs and 135kg-->
-                <label for="">kg</label> 
+                
                 <input type="radio" id="kg" name="weight_units" value="kilo"> 
-                <label for="">lbs</label>    
+                <label for="" class="unit_labels">kg</label>   
                 <input type="radio" id="lbs" name="weight_units" value="pound" checked="checked"> 
-                <input type="number" min="45" max="150" id="kg_number" class="numeral_input"  name = "weight_kgs" style="display: none;">
-                <input type="number" min="90" max="300" id="lb_number" class="numeral_input" name = "weight_lbs" style="display: flex;">
+                <label for="" class="unit_labels">lbs</label>  
+                <input type="number" min="45" max="150" id="kg_number" class="numeral_input"  name = "weight_kgs" style="display: none;" placeholder="Enter value">
+                <input type="number" min="90" max="300" id="lb_number" class="numeral_input" name = "weight_lbs" style="display: flex;" placeholder="Enter value">
                 </div>
 
                 <div class="inputs">
                     <label for="age">How old are you?</label>
-                    <input type="number" min="15" max="100" step="1" id="age" name="age_value">
+                    <input type="number" min="15" max="100" step="1" id="age" name="age_value" placeholder="Enter value">
                 </div>
         
                 <div class = "inputs">
                 <label for="height">How tall are you?</label>
-                <label for="">meters</label>
-                <input type="radio" id="meters" name="height_units" value="meters">
-                <label for="">feet</label>
+                <input type="radio" id="meters" name="height_units" value="meters" >
+                <label for="" class="unit_labels">meters</label>
                 <input type="radio" id="feet" name="height_units" value="feets" checked="checked">
+                <label for="" class="unit_labels">feet</label>
                 <!--min height of 4feet and 1.20m and max of 8feet and 2.40m-->
                 <div id="feets_input">
-                    <label for="">feet</label>
-                    <input type="number" class="numeral_input" name = "height_value_feets" id="feets" max="7" min="4" step="1">
-                    <label for="">inches</label>
-                    <input type="number" class="numeral_input" name = "height_value_inches" id="inches" max="11" min="0" step="1">
+                    <label for="" class="unit_labels">feet: </label>
+                    <input type="number" class="numeral_input" name = "height_value_feets" id="feets" max="7" min="4" step="1" placeholder="Enter value">
+                    <label for="" class="unit_labels">inches: </label>
+                    <input type="number" class="numeral_input" name = "height_value_inches" id="inches" max="11" min="0" step="1" placeholder="Enter value">
                 </div>
         
-                <div id="meters_input" style="display: none;">
-                    <label for="">meters</label>
-                    <input type="number" class="numeral_input" name = "height_in_meters" id="meter_number" min="1.00" max="2.50" step="0.01">
+                <div id="meters_input" class="unit_labels" style="display: none;">
+                    <label for="" class="unit_labels">meters: </label>
+                    <input type="number" class="numeral_input" name = "height_in_meters" id="meter_number" min="1.00" max="2.50" step="0.01" placeholder="Enter value">
                 </div>
-        
+                </div>
 
         
                 <div class="inputs">
@@ -66,12 +67,12 @@
 
                 <div class="inputs">
                     <label for="weightgoal">How much do you want to change your weight by every week? (Take into account positive or negative value)</label>
-                    <label for="kg_change_number">kg</label> 
-                    <input type="radio" id="change_radio" name="weight_change_unit" value="kg_change_value"> 
-                    <label for="lb_change">lbs</label>    
-                    <input type="radio"  id="change_radio" name="weight_change_unit" value="lbs_change_value" checked="checked"> 
-                    <input type="number" min="-3" max="3" step="0.25" id="kg_change_number" class="numeral_input"  name = "weight_change_kg" style="display: none;">
-                    <input type="number" min="-5" max="5" step="0.5" id="lb_change_number" class="numeral_input" name = "weight_change_lbs" style="display: flex;">
+                    <input type="radio" id="change_radio" name="weight_change_unit" value="kg_change_value">  
+                    <label for="kg_change_number" class="unit_labels">kg</label> 
+                    <input type="radio"  id="change_radio" name="weight_change_unit" value="lbs_change_value" checked="checked">
+                    <label for="lb_change" class="unit_labels">lbs</label>    
+                    <input type="number" min="-3" max="3" step="0.25" id="kg_change_number" class="numeral_input"  name = "weight_change_kg" style="display: none;" placeholder="Enter value">
+                    <input type="number" min="-5" max="5" step="0.5" id="lb_change_number" class="numeral_input" name = "weight_change_lbs" style="display: flex;" placeholder="Enter value">
 
                 </div>
         
