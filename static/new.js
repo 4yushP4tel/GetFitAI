@@ -78,6 +78,8 @@ function store_plan_inputs(){
     age = age.value;
 
     if(activity_level_value ==="" || activity_type_value ==="" || goal_value ==="" || days_value ==="" || age === "" ){
+        // prevents the form to be posted
+        event.preventDefault();
         alert("All fields must be filled");
         return;
     }
@@ -106,6 +108,7 @@ function store_plan_inputs(){
         let inches = document.getElementById("inches").value;
         height = `${feet} feet and ${inches} inches`;
         if(feet ==="" || inches ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -120,6 +123,7 @@ function store_plan_inputs(){
         let meter = document.getElementById("meter_number").value;
         height = `${meter} meters`;
         if(meter ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -145,6 +149,7 @@ function store_plan_inputs(){
         lb = document.getElementById("lb_number").value;
         weight = `${lb} lbs`;
         if(lb ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -158,6 +163,7 @@ function store_plan_inputs(){
         kg = document.getElementById("kg_number").value;
         weight = `${kg} kg`;
         if(kg ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -166,7 +172,8 @@ function store_plan_inputs(){
             return;
         }
     }
-
+    
+    // just to get an idea what a prompt could look like in the OpenAI API
     let plan_output = (`Give me in just a table format (No text before or after, just table) a ${days_value} day workout plan with exercises, sets and reps including all the days of the week for someone who is ${age} years old, measures ${height}, weighs ${weight}, who is ${activity_level_value}, wants to do stricly ${activity_type_value} and has for goal to ${goal_value} in html form`);
     console.log(plan_output);
 }
@@ -273,6 +280,7 @@ function store_nutrition_inputs(){
     let height_unit;
 
     if(activity_level_value ==="" || age ===""){
+        event.preventDefault();
         alert("All fields must be filled");
         return;
     }
@@ -294,6 +302,7 @@ function store_nutrition_inputs(){
         let inches = document.getElementById("inches").value;
         height = `${feet} feet and ${inches} inches`;
         if(feet ==="" || inches ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -306,6 +315,7 @@ function store_nutrition_inputs(){
         meter = document.getElementById("meter_number").value;
         height = `${meter} meters`;
         if(meter ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -329,6 +339,7 @@ function store_nutrition_inputs(){
         lb = document.getElementById("lb_number").value;
         weight = `${lb} lbs`;
         if(lb ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -342,6 +353,7 @@ function store_nutrition_inputs(){
         kg = document.getElementById("kg_number").value;
         weight = `${kg} kg`;
         if(kg ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -363,6 +375,7 @@ function store_nutrition_inputs(){
         lb_change = document.getElementById("lb_change_number").value;
         weight_change = `${lb_change} lbs`;
         if(lb_change ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -375,6 +388,7 @@ function store_nutrition_inputs(){
         kg_change = document.getElementById("kg_change_number").value;
         weight_change = `${kg_change} kg`;
         if(kg_change ===""){
+            event.preventDefault();
             alert("All fields must be filled");
             return;
         }
@@ -383,7 +397,7 @@ function store_nutrition_inputs(){
             return;
         }
     }
-
+    // just to get an idea what a prompt could look like in the OpenAI API
     let nutrition_output = (`Give me just the numbers in table format (no calculations at all) of the macronutrients and calories that someone who is ${age}years old, ${height} tall, weighs ${weight} and wishes to change their weight by ${weight_change} per week and has a ${activity_level_value} activity level should consume. In html form`);
     console.log(nutrition_output);   
 }

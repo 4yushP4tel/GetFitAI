@@ -14,9 +14,8 @@ load_dotenv(dotenv_path)
 #store .env file's variable in a python variable
 get_fit_key = os.getenv("api_key")
 
-#api key is used to authenticate who uses the api,
+#ap is used i keyto authenticate who uses the api,
 #this must stay hidden so instead of hardcoding it in my source code, I make it and environment variable using .env file
-
 
 # instance of OpenAI class is assigned to client variable
 client = OpenAI(api_key= get_fit_key)
@@ -49,13 +48,8 @@ def plan():
             wt_unit = request.form["weight_unit"]
             if wt_unit == "kg":
                 wt_in_kg_ = request.form["weight_kg"]
-                if not wt_in_kg_ :
-                    #uses query parameters to keep the already-inputted values in the form
-                    return redirect(url_for("plan"))
             elif wt_unit == "lbs":
                 wt_in_lb_ = request.form["weight_lb"]
-                if not wt_in_lb_:
-                    return redirect(url_for("plan" ))
                 wt_in_lb_ = int(wt_in_lb_)
                 wt_in_kg_ = float(wt_in_lb_) * 0.453592
                 wt_in_kg_ = str(wt_in_kg_)
@@ -66,14 +60,10 @@ def plan():
             ht_unit = request.form["height_unit"]
             if ht_unit == "meters":
                 ht_in_m_ = request.form["height"]
-                if not ht_in_m_ :
-                    return redirect(url_for("plan"))
             elif ht_unit == "feet":
                 inches = request.form["height_inches"]
                 feet = request.form["height_feet"]
-                if not inches or not feet:
-                    return redirect(url_for("plan"))
-                #change from str to int to do math
+                #change from str to int to do math and change feet/inches into meters
                 inches = int(inches)
                 feet = int(feet)
                 ht_in_in = inches + feet*12
@@ -93,10 +83,6 @@ def plan():
             days = request.form["num_of_days"]
             num_rest = 7- int(days)
             num_rest = str(num_rest)
-
-            if not (age and act_level and activity_type and fitness_goal and days):
-                # brings the client back to the form but erases already filled things 
-                return redirect(url_for("plan")) 
             
             return redirect(url_for("your_plan", wt_in_kg=wt_in_kg_, ag=age, ht_in_m=ht_in_m_, act_lvl=act_level, act_type=activity_type, fit_goal=fitness_goal, num_days=days, rest_days = num_rest)) # add the info from the form
         except:
@@ -116,36 +102,23 @@ def nutrition():
             weight_unit = request.form["weight_units"]
             if weight_unit == "kilo":
                 weight_in_kg = request.form["weight_kgs"]
-                if not weight_in_kg:
-                    print("weight kg not submitted")
-                    return redirect(url_for("nutrition"))
             elif weight_unit == "pound":
                 weight_in_lbs = request.form["weight_lbs"]
-                if not weight_in_lbs:
-                    print("weight lbs not submitted")
-                    return redirect(url_for("nutrition"))
                 weight_in_lbs = int(weight_in_lbs)
                 weight_in_kg = float(weight_in_lbs) * 0.453592
                 weight_in_kg = str(weight_in_kg)
             
             #age
             age_value = request.form["age_value"]
-            if not age_value:
-                print("age not submitted")
-                return redirect(url_for("nutrition"))
+
             #height
             height_units = request.form["height_units"]
             if height_units == "meters":
                 height_in_meters = request.form["height_in_meters"]
-                if not height_in_meters:
-                    print("height m not submitted")
-                    return redirect(url_for("nutrition"))
+
             elif height_units == "feets":
                 height_value_feets = request.form["height_value_feets"]
                 height_value_inches =  request.form["height_value_inches"]
-                if not(height_value_feets or height_value_inches):
-                    print("height feet not submitted")
-                    return redirect(url_for("nutrition"))
                 height_value_feets = int(height_value_feets)
                 height_value_inches = int(height_value_inches)
                 height_value_inches = height_value_inches + height_value_feets*12
@@ -153,21 +126,14 @@ def nutrition():
                 height_in_meters = str(height_in_meters)
             #activity_level
             activity_level = request.form["activity_level_value"]
-            if not activity_level:
-                print("activity level not submitted")
-                return redirect(url_for("nutrition"))
+
             # weight_change
             weight_change_unit = request.form["weight_change_unit"]
             if weight_change_unit == "kg_change_value":
                 weight_change_kg = request.form["weight_change_kg"]
-                if not weight_change_kg:
-                    print("weight change kg not submitted")
-                    return redirect(url_for("nutrition"))
+
             elif weight_change_unit == "lbs_change_value":
                 weight_change_lbs = request.form["weight_change_lbs"]
-                if not weight_change_lbs:
-                    print("weight change lbs not submitted")
-                    return redirect(url_for("nutrition"))
                 # page kept refreshing here due to not taking into account that the weight change is a float and not an integer
                 weight_change_lbs = float(weight_change_lbs)
                 weight_change_kg = weight_change_lbs* 0.453592
