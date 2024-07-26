@@ -48,13 +48,13 @@ body{
     align-items: flex-start;
     align-content: space-between;
     font-size: 20px;
-    width: 90%;
+    width: 100%;
     height: 100%;
     padding-top: 100px;
     max-width: 145vh;
     min-height: 100vh;
     max-height: 150vh;
-    padding-left: 500px ;
+    padding-left: 450px ;
     font-style: italic;
 }
 .image_container{
