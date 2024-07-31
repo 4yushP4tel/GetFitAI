@@ -35,6 +35,11 @@ def get_response(prompt):
         )
         return completion.choices[0].message.content
 
+# when you go to the / route, you are sent automatically to the /home route
+@app.route('/')
+def index():
+    return redirect(url_for('main'))
+
 @app.route("/home")
 def main():
     return render_template("main.html")
