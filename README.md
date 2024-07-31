@@ -13,3 +13,5 @@ know that the response to their form submission is being created. This will be d
 
 - If a field in the form is not field, an alert is sent to notify the user that all the fields must be filled, but right after, the page reloads and the already filled input fields are cleared. 
     - This problem has been fixed. It was fixed by using the event.preventDefault() method in the new.js file whenever all the input fields were not filled. This prevented the form to get submitted via POST and this allows the form to not get erased. This also allows me to make my python code cleaner as I can remove all the code that reloaded the page when input fields were not filled.
+
+This web app will now be deployed using Vercel

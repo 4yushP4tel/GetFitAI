@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GetFitAI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
+    <link rel="stylesheet" href="/static/new.css">
     <body>
 <!--Header Div-->
         <div class="header">
@@ -27,9 +27,9 @@
             </div>
             <br>
             <div class="image_container">
-                <img src="{{ url_for('static', filename = 'images/workout.png') }}" alt="workout_image" class="image">
+                <img src="/static/images/workout.png" alt="workout_image" class="image">
             </div>
         </div>
     </body>
-    <script src = "{{ url_for('static', filename = 'new.js') }}"></script>
+    <script src = "/static/new.js"></script>
     </html>
