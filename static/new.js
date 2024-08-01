@@ -401,3 +401,29 @@ function store_nutrition_inputs(){
     let nutrition_output = (`Give me just the numbers in table format (no calculations at all) of the macronutrients and calories that someone who is ${age}years old, ${height} tall, weighs ${weight} and wishes to change their weight by ${weight_change} per week and has a ${activity_level_value} activity level should consume. In html form`);
     console.log(nutrition_output);   
 }
+
+// loading screens 
+// shows loading screen for 5 seconds before navigating to the your_macros page only runs this if the 
+// nutrition form is present on the page
+if(document.getElementById("nutrition_form")){
+    document.getElementById("nutrition_form").addEventListener("submit", function(){
+        document.getElementById("nutrition_loading").style.display = "block";
+        document.getElementById("non_loading_page").style.display = "none";
+        setTimeout(function(){
+            window.location.href = "/your_macros";
+        }, 5000);
+    });
+}
+
+// shows loading screen for 30 seconds before navigating to the your_plan page only if the plan form
+// is present on the page
+if(document.getElementById("plan_form")){
+    document.getElementById("plan_form").addEventListener("submit", function(){
+        document.getElementById("plan_loading").style.display = "block";
+        document.getElementById("non_loading_page").style.display = "none";
+        setTimeout(function(){
+            window.location.href = "/your_plan";
+        }, 30000);
+    });
+}
+

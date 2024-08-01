@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="/static/new.css">
 </head>
 <body>
+    <div id="non_loading_page">
     <div class="header">
         <h1 class="logo">GetFitAI</h1>
          <a href="/home">Home</a> <a href="/workout_plan_generator">Workout Planner</a> <a href="#">Macronutrient Calculator</a>
     </div>
-    <div class="fitnessinputs">
-        <form method="post">
+    <div class="fitnessinputs" id="fitnessinputs">
+        <form method="post" id="nutrition_form">
  
                 <div class = "inputs">
                 <label for="weight">How much do you weigh?</label>
@@ -77,8 +78,17 @@
 
                 </div>
         
-                <input type="submit" value="Get an outline for your diet" class="submit_button" onclick="store_nutrition_inputs()">
+                <input type="submit" value="Get an outline for your diet" class="submit_button" onclick="store_nutrition_inputs();">
         </form>
+    </div>
+    </div>
+
+    <div id="nutrition_loading" class="loading" style="display: none;">
+        <h1>GetFitAI</h1>
+        <br>
+        <img src="/static/images/loading.gif" alt="gif">
+        <br>
+        <h3 class="loading_quote">Stay with us as we create a diet outline special for you...</h3>
     </div>
 </body>
 <script src = "/static/new.js"></script>

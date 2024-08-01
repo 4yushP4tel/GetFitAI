@@ -9,6 +9,7 @@ The back-end of this website is built using the Python programming language and 
 This website is fully functional, but does have a few issues:
 - When the form is submitted to get a custom workout plan or diet advice, there is a wait time, since it takes time for the server to generate a response. My solution to this problem is that I will create a loading page, which will display a spinning circle to let users 
 know that the response to their form submission is being created. This will be done in another branch.
+    -This has been fixed in the new.js file by creating a loading div that is displayed until the output from the API has been generated. It is a Gif with a small message at the bottom. This was done on the loading_page branch and has been merged with the main branch.
 
 
 - If a field in the form is not field, an alert is sent to notify the user that all the fields must be filled, but right after, the page reloads and the already filled input fields are cleared. 
