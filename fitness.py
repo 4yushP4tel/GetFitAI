@@ -167,7 +167,7 @@ def your_plan():
     num_days = request.args.get('num_days')
     rest_days = request.args.get('rest_days')
     
-    plan_prompt = f"""In just a table format (no other text) (in HTML code), please give me a full week of a workout plan including rest days(according to info given below) and workouts containing 3-5 exercises for the following person:
+    plan_prompt = f"""In just a table format (no other text) (in HTML code), please give me a full week of a workout plan, in under 15 seconds, including rest days(according to info given below) and workouts containing 3-5 exercises for the following person:
                 age: {ag},
                 weight: {wt_in_kg}kg,
                 height: {ht_in_m}m,
